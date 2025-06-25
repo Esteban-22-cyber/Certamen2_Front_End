@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Calificaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="main-title">Calificaciones de Estudiantes</h1>
+    </header>
+
+    <main>
+        <section class="average-container" aria-label="Promedio del curso">
+            <p id="promedioCurso">Promedio general del curso: No disponible</p>
+            <p class="total-students">Total de estudiantes: <span id="totalStudents">0</span></p>
+        </section>
+
+        <section>
+            <form class="studentForm" id="StudentForm" autocomplete="off" aria-label="Formulario de estudiantes">
+                <h3>Notas Asignatura Front-End</h3>
+                <div class="student-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                    <div class="error-message" id="nameError" aria-live="polite"></div>
+
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Apellido" required>
+                    <div class="error-message" id="lastNameError" aria-live="polite"></div>
+
+                    <label for="grade">Nota:</label>
+                    <input type="number" id="grade" step="0.1" min="1" max="7" name="grade" placeholder="Nota" required>
+                    <div class="error-message" id="gradeError" aria-live="polite"></div>
+
+                    <button type="submit">Agregar estudiante</button>
+                </div>
+            </form>
+        </section>
+
+        <section aria-label="Tabla de estudiantes">
+            <table id="StudentTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Nota</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas de datos -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="statistics-section" aria-label="Estadísticas del curso">
+            <h3>Estadísticas del Curso</h3>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h4>Nota más alta</h4>
+                    <p id="highestGrade">No disponible</p>
+                </div>
+                <div class="stat-box">
+                    <h4>Nota más baja</h4>
+                    <p id="lowestGrade">No disponible</p>
+                </div>
+                <div class="stat-box">
+                    <h4>% Aprobados</h4>
+                    <p id="passPercentage">0%</p>
+                </div>
+                <div class="stat-box">
+                    <h4>% Reprobados</h4>
+                    <p id="failPercentage">0%</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
